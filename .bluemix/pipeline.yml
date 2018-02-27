@@ -49,11 +49,19 @@ stages:
       cd /home/pipeline/$BUILD_ID
       fastlane beta
 
-      cp ./app/build/outputs/apk/app-release-unsigned.apk .
+      mkdir /home/pipeline/temp
+      cp ./app/build/outputs/apk/app-release-unsigned.apk /home/pipeline/temp
+      mkdir /home/pipeline/appupload
 
       # Push the generated apk for git hub for testing
       git config --global user.name $gitPushUser
       git config --global user.email $gitPushEmail
+      git config --global push.default matching
+      cd /home/pipeline/appupload
+      git clone https://github.com/sam-almighty/appuploadrepo.git .
+      ls
+      rm -rf
+      cp /home/pipeline/temp/app-release-unsigned.apk .
       git add app-release-unsigned.apk
       git commit -m "released a new version of apk - build : ($BUILD_ID)"
       echo $apkGitPushUrl
