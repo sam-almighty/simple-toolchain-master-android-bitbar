@@ -66,7 +66,7 @@ stages:
       git commit -m "released a new version of apk - build : ($BUILD_ID)"
       echo $apkGitPushUrl
       git push $apkGitPushUrl
-- name: TEST - AppiumTestDroid
+- name: TEST - AppiumBitBar
   inputs:
   - type: git
     branch: master
@@ -132,7 +132,7 @@ stages:
       #!/bin/bash
       cd /home/pipeline/$BUILD_ID/appium/sample-scripts/java
       mvn clean install -X -Dtest=$test -DexecutionType=$executionType -DapiKey=$bitbarApiKey -DapplicationPath=$applicationPath
-- name: UPLOAD - Logs
+- name: Publish Results
   triggers:
   - type: stage
   properties:
