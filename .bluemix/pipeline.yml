@@ -18,7 +18,7 @@ stages:
     value: sam.almighty85@gmail.com
     type: text
   - name: apkGitPushUrl
-    value: https://$gitPushToken:x-oauth-basic@github.com/sam-almighty/sample-android-app master
+    value: https://$gitPushToken:x-oauth-basic@github.com/sam-almighty/appuploadrepo master
     type: text
   jobs:
   - name: Install Android SDK, Fastlane and build apk
