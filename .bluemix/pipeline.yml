@@ -50,7 +50,7 @@ stages:
       fastlane beta
 
       mkdir /home/pipeline/temp
-      cp ./app/build/outputs/apk/app-release-unsigned.apk /home/pipeline/temp
+      cp ./app/build/outputs/apk/app-release.apk /home/pipeline/temp
       mkdir /home/pipeline/appupload
 
       # Push the generated apk for git hub for testing
@@ -61,8 +61,8 @@ stages:
       git clone https://github.com/sam-almighty/appuploadrepo.git .
       ls
       rm -rf
-      cp /home/pipeline/temp/app-release-unsigned.apk .
-      git add app-release-unsigned.apk
+      cp /home/pipeline/temp/app-release.apk .
+      git add app-release.apk
       git commit -m "released a new version of apk - build : ($BUILD_ID)"
       echo $apkGitPushUrl
       git push $apkGitPushUrl
@@ -112,7 +112,7 @@ stages:
     value: /home/pipeline/home/pipeline/$BUILD_ID/target
     type: text
   - name: applicationPath
-    value: /home/pipeline/$BUILD_ID/appium/sample-scripts/java/src/test/resources/IBMAppCenterClient.apk
+    value: https://github.com/sam-almighty/appuploadrepo/raw/master/app-release.apk
     type: text
   - name: executionType
     value: clientside
