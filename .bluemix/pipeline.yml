@@ -123,6 +123,12 @@ stages:
   - name: bitbarApiKey
     value: 4NzWsHfszhngAZ7iyFAq0gGISkgtrtlJ
     type: text
+  - name: testdroid_project
+    value: Android Java Appium Client Side Example Project
+    type: text
+  - name: testdroid_device
+    value: LG Google Nexus 5 6.0 -EU
+    type: text
   jobs:
   - name: Test the app using Appium scripts on Bitbar
     type: builder
