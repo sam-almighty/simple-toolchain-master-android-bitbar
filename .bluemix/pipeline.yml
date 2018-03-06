@@ -101,7 +101,7 @@ stages:
     script: |-
       #!/bin/bash
       cd /home/pipeline/$BUILD_ID/appium/sample-scripts/java
-      mvn clean install -X -Dtest=$test -DexecutionType=$executionType -DapiKey=$bitbarApiKey -DapplicationPath=$applicationPath
+      mvn clean install -X -Dtest=$test -DexecutionType=$executionType -DapiKey=$bitbarApiKey -DapplicationPath=$applicationPath -Dtestdroid_project=$testdroid_project
 - name: Publish Results
   triggers:
   - type: stage
