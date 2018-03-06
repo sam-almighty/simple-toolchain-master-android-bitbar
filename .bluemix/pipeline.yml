@@ -75,39 +75,6 @@ stages:
   triggers:
   - type: stage
   properties:
-  - name: skipDatafile
-    value: 'true'
-    type: text
-  - name: absoluteurl
-    value: http://gsander.de:8080/appcenterconsole80/console.html
-    type: text
-  - name: username
-    value: demo
-    type: text
-  - name: password
-    value: demo4711
-    type: text
-  - name: uploadfile
-    value: /Users/vinod/AppCenterAppiumAutomation/AppCenterUIAutomation/src/main/resources/Hello.ipa
-    type: text
-  - name: context
-    value: appcenterconsole80
-    type: text
-  - name: mobcontext
-    value: applicationcenter80
-    type: text
-  - name: port
-    value: '8080'
-    type: text
-  - name: portocol
-    value: http
-    type: text
-  - name: hostname
-    value: gsander.de
-    type: text
-  - name: appcenterclientapppath
-    value: /home/pipeline/$BUILD_ID/target/classes/IBMAppCenterClient.apk
-    type: text
   - name: screenshot_dir
     value: /home/pipeline/home/pipeline/$BUILD_ID/target
     type: text
@@ -124,10 +91,7 @@ stages:
     value: 4NzWsHfszhngAZ7iyFAq0gGISkgtrtlJ
     type: text
   - name: testdroid_project
-    value: Android Java Appium Client Side Example Project
-    type: text
-  - name: testdroid_device
-    value: LG Google Nexus 5 6.0 -EU
+    value: SimpleAndroidTestProject
     type: text
   jobs:
   - name: Test the app using Appium scripts on Bitbar
